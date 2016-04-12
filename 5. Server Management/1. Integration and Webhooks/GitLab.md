@@ -31,7 +31,7 @@ class Script {
         if (request.headers['x-gitlab-event'] === "Issue Hook") {
           return {
               content: {
-                  username: request.content.user_name,
+                  username: request.content.user.name,
                   text: request.content.user.username + " created an issue _" + request.content.object_attributes.title + "_ on " + request.content.project.name + ".\n See: " + request.content.object_attributes.url,
                   icon_url: request.content.user.avatar_url,
 
